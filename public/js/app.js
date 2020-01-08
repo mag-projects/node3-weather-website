@@ -11,7 +11,7 @@ weatherForm.addEventListener("submit", (e) => { // "e" stands for event
     messageOne.textContent = "Loading..."; // Loading will display until the error or weather info is returned
     messageTwo.textContent = "";
 
-    fetch(`http://localhost:3000/weather?address=${location}`).then(response => {
+    fetch(`/weather?address=${location}`).then(response => {
         // Fetch not accessible in node, Browser only API
         response.json().then(data => {
             if (data.error) messageOne.textContent = `${data.error}`;
