@@ -14,7 +14,7 @@ weatherForm.addEventListener("submit", (e) => { // "e" stands for event
     fetch(`/weather?address=${location}`).then(response => {
         // Fetch not accessible in node, Browser only API
         response.json().then(data => {
-            if (data.error) messageOne.textContent = `${data.error}`;
+            if (data.Error) messageOne.textContent = `${data.error}`;
             messageOne.textContent = `${data.name}`;
             messageTwo.textContent = `${data.weather}`;
         });
